@@ -1,0 +1,15 @@
+<h2>Latest Tickets</h2>
+
+{% if latest_issue_list %}
+<div>
+	{% for issue in latest_issue_list %}
+	<div>
+		<h4><a href="{% url 'issue:issue_detail' issue.id %}">
+		{{issue.title}}
+		</a></h4>
+	</div>
+	{% endfor%}
+</div>
+{% else %}
+<p>No Tickets are available.</p>
+{% endif %}
